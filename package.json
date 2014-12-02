@@ -1,0 +1,19 @@
+{
+  "name": "myFirstLambda",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "aws-sdk":"2.*",
+    "dynamodb-doc":"1.*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "eslint": "*",
+    "istanbul": "*"
+  },
+  "scripts" : {
+    "test" : "npm -s run-script lint && npm -s run-script unit",
+    "unit" : "istanbul `[ $COVERAGE ] && echo 'cover _mocha' || echo 'test mocha'` -- test test/basic",
+    "lint" : "eslint ./*.js"
+  }
+}
