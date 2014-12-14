@@ -1,6 +1,0 @@
-#!/bin/bash
-
-rm -fr pkg
-mkdir pkg
-cd pkg
-zip -r pkg/pkg.zip app.js node_modules -x node_modules/aws-sdk\*
