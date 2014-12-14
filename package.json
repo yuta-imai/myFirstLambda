@@ -2,11 +2,11 @@
   "name": "myFirstLambda",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {
-    "aws-sdk":"2.*",
-    "dynamodb-doc":"1.*"
-  },
+  "engines" : { "node" : "0.10.32" },
+  "main": "app.js",
+  "dependencies": {},
   "devDependencies": {
+    "aws-sdk":"2.1.2",
     "mocha": "*",
     "eslint": "*",
     "istanbul": "*"
@@ -14,6 +14,9 @@
   "scripts" : {
     "test" : "npm -s run-script lint && npm -s run-script unit",
     "unit" : "istanbul `[ $COVERAGE ] && echo 'cover _mocha' || echo 'test mocha'` -- test test/basic",
-    "lint" : "eslint ./*.js"
+    "lint" : "eslint ./*.js",
+    "initLambda" : "node ./script/initLambda.js",
+    "build": "node ./script/build.js",
+    "publish": "node ./script/publish.js"
   }
 }

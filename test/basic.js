@@ -46,9 +46,10 @@ var context = {
 };
 
 describe('myFirstLambda',function(){
-    it('Should have docClient', function(){
-        var lambda = require("../myFirstLambda");
+    it('Should have event as a property', function(){
+        var lambda = require("../app");
         lambda.handler(data,context);
-        assert(lambda.docClient);
+        assert(lambda.event);
+        assert.deepEqual(data,lambda.event);
     });
 });
